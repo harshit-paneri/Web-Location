@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>My Google Map on web page</title>
+    <style>
+        body {
+            
+            background-color: aqua;
+        }
+
+        #map {
+            width: 50%;
+            height: 400px;
+            background-color:mediumpurple;
+        }
+    </style>
+</head>
+<body >
+
+    <h1 style="text-align:center">Google Map</h1>
+    <h3>Enter longitude</h3>
+    <input type="text" id="myNumber1">
+    <h3>Enter latitude</h3>
+    <input type="text" id="myNumber2">
+    <button onclick="myFunction1()">Find Location..</button>
+    <div id="map"></div>
+    <script>
+        function myFunction1() {
+            //var m1 = -25.344
+            if (document.getElementById("myNumber1") && document.getElementById("myNumber1").value) {
+                var m1 = document.getElementById('myNumber1').value;
+            } else {
+                alert("Please enter value of longitude");
+                return;
+            }
+            //var m2 = 131.036
+            if (document.getElementById("myNumber2") && document.getElementById("myNumber2").value) {
+                var m2 = document.getElementById('myNumber2').value;
+            } else {
+                alert("Please enter value of latitude");
+                return;
+            }
+            const uluru = { lat: parseFloat(m1), lng: parseFloat(m2) };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+            });
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-OXJ1L0k4641pTKBPUoCgzSKPcZukNkw">
+    </script>
+</body>
+</html>
