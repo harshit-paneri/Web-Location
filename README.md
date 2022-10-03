@@ -35,10 +35,10 @@ git add .
 git commit -m "add feature name"
 ```
 
-* Push changes
+* Then push 
 
 ```
-git push
+git push origin new-branch-name
 ```
 
 Finally Send Pull Request 🙌🙌
