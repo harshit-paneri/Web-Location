@@ -3,7 +3,12 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
+a{
+  color:white;
+}
+a:hover{
+  color: black;
+}
 body {
   background-color: rgba(255, 255, 255, 0);
 }
@@ -60,9 +65,9 @@ h1.title {
   padding-bottom: 1rem;
 }
 
-#myNumber1,
-#myNumber2 {
-  border-radius: 2rem;
+#coordsX,
+#coordsY {
+  border-radius: 1rem;
   padding: 0.5rem;
   margin: 0.5rem;
   border: none;
@@ -72,9 +77,10 @@ h1.title {
 #map {
   width: 100%;
   height: 25rem;
-  background-color: #ff4800;
+  background-color: transparent;
   box-shadow: 6px 6px 20px #000000;
   padding-bottom: 1rem;
+  border-radius: 1rem;
 }
 
 .btn {
@@ -153,3 +159,4 @@ h1.title {
     background-position: 20vw;
   }
 }
+
