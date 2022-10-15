@@ -22,6 +22,13 @@
         <h1 style="font-size:60px;">Welcome to Geo Location</h1>
         <h5>Check out the <a href="https://github.com/harshit-paneri/Web-Location"><i class="fa fa-github"> Github</i></a> repository!</h5>
     </center>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="alert_message"></p>
+        </div>
+      
+    </div>
     <div class="main-cont">
         <div class="user-inputs">
             <h1 class="title"><b><u><i>Google-Map<i><u><b></h1>
@@ -47,7 +54,7 @@
             if (x.value.trim()) {
                 var m1 = x.value.trim();
             } else {
-                alert("Please enter value of longitude");
+                showAlert("longitude");
                 return;
             }
             //var m2 = 131.036
@@ -55,7 +62,7 @@
             if (y.value.trim()) {
                 var m2 =y.value.trim();
             } else {
-                alert("Please enter value of latitude");
+                showAlert("latitude");
                 return;
             }
             const uluru = { lat: parseFloat(m1), lng: parseFloat(m2) };
@@ -68,6 +75,32 @@
                 position: uluru,
                 map: map,
             });
+        }
+
+        //modal functions to display alert
+        var message = document.getElementById("alert_message");
+        function showAlert(input) {
+            message.innerText = `Please enter value of ${input}`
+            // modal is displayed
+            modal.style.display = "block"
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
 
     </script>
