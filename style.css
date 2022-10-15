@@ -42,7 +42,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: white;
+  color: gray;
   text-shadow: 4px 4px 15px black;
   width: 50%;
   padding: 0.5rem;
