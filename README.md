@@ -1,16 +1,12 @@
 # Web Location
 
-By using basic API Token we  find the geographical location on the google maps through given coordinates
+ * By using basic API Token we  find the geographical location on the google maps through given coordinates
 
-# What you can contribute in this repository ?
-* Add Backgroud
-* Do better CSS
-* Improve Buttons </br>
-and many more..
 
-## How to contribute ?
 
-* Clone this repository :
+## How to contribute 📝 ?
+
+* Clone this repository 👩🏻‍💻:
 
 ```
 git clone https://github.com/harshit-paneri/Web-Location.git
