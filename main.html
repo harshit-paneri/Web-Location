@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
- 
+
 <head>
     <meta charset="utf-8" />
     <title>My Google Map on web page</title>
@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
- 
+
 <body>
     <center>
-        <h1 style="font-size:60px; color: darkorchid; font-weight: bold;">Welcome to Geo Location</h1>
+        <h1 style="font-size:60px;">Welcome to Geo Location</h1>
         <h5>Check out the <a href="https://github.com/harshit-paneri/Web-Location"><i class="fa fa-github"> Github</i></a> repository!</h5>
     </center>
     <div class="main-cont">
@@ -28,8 +28,8 @@
             <h3 class="title">Enter longitude</h3>
             <input type="text" id="coordsX" placeholder="24.5854">
             <h3 class="title">Enter latitude</h3>
-            <input type="text" id="coordsY" placeholder="78.9629">
-            <button class="btn btn-primary mt-2 rainbow-5" onclick="locate()">Find Location</button>
+            <input type="text" id="coordsY" placeholder="73.7125">
+            <button class="btn btn-primary mt-2 rainbow-5" onclick="locate()">Find Location..</button>
         </div>
         <div class="map-widget">
             <div id="map"></div>
@@ -59,7 +59,7 @@
                 return;
             }
             const uluru = { lat: parseFloat(m1), lng: parseFloat(m2) };
-           
+            
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 4,
                 center: uluru,
@@ -69,12 +69,11 @@
                 map: map,
             });
         }
- 
+
     </script>
- 
+
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-OXJ1L0k4641pTKBPUoCgzSKPcZukNkw">
     </script>
 </body>
- 
-</html>
 
+</html>
