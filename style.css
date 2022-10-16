@@ -13,6 +13,19 @@ body {
   background-color: rgba(255, 255, 255, 0);
 }
 
+hr{
+  background: linear-gradient(
+    45deg,
+    #ca485c,
+    #e16b5c,
+   
+  );
+  border-style: none none dotted;
+  border-color: black;
+  border-width: 7px;
+  width: 5%;
+}
+
 html {
   background: linear-gradient(
     45deg,
