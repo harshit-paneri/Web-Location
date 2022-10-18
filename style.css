@@ -10,7 +10,7 @@ a:hover{
   color: black;
 }
 body {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(250, 250, 250, 0);
 }
 
 hr{
@@ -69,7 +69,7 @@ header h1 {
 }
 
 .blur {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(250, 250, 250, 0.5);
   backdrop-filter: blur(2rem);
 }
 
