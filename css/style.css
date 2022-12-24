@@ -44,28 +44,6 @@ hr {
     width: 5%;
 }
 
-header {
-    background-color: rgb(0, 179, 137)
-}
-
-header h1 {
-    margin-top: 0;
-    margin-left: 500px;
-}
-
-/* header h3{
-  color:#000000;
-} */
-
-.container {
-    color: white;
-    text-shadow: 1px 1px black;
-    font-size: 30px;
-    text-decoration: underline;
-    text-decoration-color: #000000;
-    padding-bottom: 20px;
-}
-
 .img-shadow {
     border-radius: 20%;
     box-shadow: 0 0 10px 10px rgb(96, 172, 56);
@@ -103,16 +81,6 @@ header h1 {
     justify-content: center;
 }
 
-.blur {
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2rem);
-}
-
-h1.title {
-    padding-top: 20rem;
-    padding-bottom: 1rem;
-}
-
 #coordsX,
 #coordsY {
     border-radius: 20rem;
@@ -125,7 +93,6 @@ h1.title {
     border-style: solid;
     box-shadow: 5px 5px 5px rgb(113, 226, 26);
     padding-bottom: 1rem;
-
 }
 
 #map {
@@ -144,19 +111,14 @@ h1.title {
     box-shadow: 6px 6px 30px black;
 }
 
-/* alert (modal) style */
-/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;
@@ -191,23 +153,6 @@ h2 {
     }
 }
 
-.rainbow-5 {
-    background-image: linear-gradient(90deg,
-            #00c0ff 0%,
-            #ffcf00 49%,
-            #fc4f4f 80%,
-            #00c0ff 100%);
-    animation: slidebg 5s linear infinite;
-}
-
-.rainbow-5:hover {
-    background-image: linear-gradient(90deg,
-            #ffcf00 0%,
-            #fc4f4f 50%,
-            #00c0ff 100%);
-    animation: slidebg 5s linear infinite;
-}
-
 .footer-basic {
     padding: 40px 0;
     color: #4b4c4d;
@@ -235,10 +180,4 @@ h2 {
 
 .footer-basic .social>a:hover {
     opacity: 0.9;
-}
-
-@keyframes slidebg {
-    to {
-        background-position: 20vw;
-    }
 }
