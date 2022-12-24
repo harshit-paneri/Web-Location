@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>My Google Map on web page</title>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,125 +15,122 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 
-<body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body onload="locate()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"><b>Geo Location</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-            <a class="nav-link" href="main.html"><b>Help</b> <span class="sr-only">(current)</span></a></b>
-            </li>
-            <!-- <li class="nav-item">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="main.html"><b>Help</b> <span class="sr-only">(current)</span></a></b>
+                </li>
+                <!-- <li class="nav-item">
               <a class="nav-link" href="main.html">About</a>
             </li> -->
-            
-            <!-- <li class="nav-item">
+
+                <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#">contact us</a>
             </li> -->
-          </ul>
+            </ul>
         </div>
-      </nav>
-  
+    </nav>
+
     <center>
         <h1 style="font-size:60px;">Welcome to Geo Location</h1>
         <hr>
-        <h5>Check out the <a href="https://github.com/harshit-paneri/Web-Location"><i class="fa fa-github"> Github</i></a> repository!</h5>
+        <h5>Check out the <a href="https://github.com/harshit-paneri/Web-Location"><i class="fa fa-github">
+                    Github</i></a> repository!</h5>
         <hr>
     </center>
     <div id="myModal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="alert_message"></p>
+            <span class="close">&times;</span>
+            <p id="alert_message"></p>
         </div>
-      
+
     </div>
     <div class="main-cont">
         <div class="user-inputs">
             <hr>
             <h3 class="title">Enter longitude</h3>
-            <input type="text" id="coordsX" placeholder="20.5937">
+            <input type="text" id="coordsX" placeholder="20.5937" value="20.5937">
             <h3 class="title">Enter latitude</h3>
-            <input type="text" id="coordsY" placeholder="78.9629">
+            <input type="text" id="coordsY" placeholder="78.9629" value="78.9629">
             <button class="btn btn-primary mt-5 mb-2 rainbow-2" onclick="locate()">Find Location..</button>
             <hr>
         </div>
         <div class="map-widget">
             <div id="map"></div>
             <div class="gmaps">
-                <img src="Google Image.jpg" class="img-shadow" id="gmap-icon">
+                <img src="../media/Google Image.jpg" class="img-shadow" id="gmap-icon">
                 <h3><b>Powered by Google Maps</b></h3>
             </div>
         </div>
     </div>
     <div class="footer-basic">
         <footer>
-            <h2><center><b>Contact us on...</b></center></h2>
-          
+            <h2>
+                <center><b>Contact us on...</b></center>
+            </h2>
+
             <div class="social">
-                <a href="https://www.linkedin.com/in/harshitpaneri29/"><img src= "Social-Media.png" class='img-shadow' width="100px" height="100px"></a>
+                <a href="https://www.linkedin.com/in/harshitpaneri29/"><img src="../media/Social-Media.png"
+                        class='img-shadow' width="50px" height="50px"></a>
             </div>
         </footer>
     </div>
     <script>
+        const elements = {
+            x: document.getElementById("coordsX"),
+            y: document.getElementById("coordsY"),
+            map: document.getElementById("map"),
+            modal: document.getElementById("myModal"),
+            alert: document.getElementById("alert_message"),
+            close: document.getElementsByClassName("close")[0]
+        }
         function locate() {
-            //var m1 = -25.344
-            const x=document.getElementById("coordsX");
-            if (x.value.trim()) {
-                var m1 = x.value.trim();
-            } else {
-                alert("Please enter value of longitude");
+            let m1, m2
+            if (!elements.x.value.trim() && !elements.y.value.trim()) {
+                alert("Please enter value of longitude and latitude");
                 return;
             }
-            //var m2 = 131.036
-            const y=document.getElementById("coordsY");
-            if (y.value.trim()) {
-                var m2 =y.value.trim();
-            } else {
-                alert("Please enter value of latitude");
-                return;
+            const pos = {
+                lat: parseFloat(elements.x.value.trim()),
+                lng: parseFloat(elements.y.value.trim())
             }
-            const uluru = { lat: parseFloat(m1), lng: parseFloat(m2) };
-            
-            const map = new google.maps.Map(document.getElementById("map"), {
+
+            const map = new google.maps.Map(elements.map, {
                 zoom: 4,
-                center: uluru,
+                center: pos,
             });
             const marker = new google.maps.Marker({
-                position: uluru,
+                position: pos,
                 map: map,
             });
         }
         //modal functions to display alert
-        var message = document.getElementById("alert_message");
         function showAlert(input) {
-            message.innerText = `Please enter value of ${input}`
+            elements.message.innerText = `Please enter value of ${input}`
             // modal is displayed
-            modal.style.display = "block"
+            elements.modal.style.display = "block"
         }
 
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+        elements.span.onclick = () => {
+            elements.modal.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+        window.onclick = (evt) => {
+            if (evt.target != elements.modal) return;
+            elements.modal.style.display = "none";
         }
 
     </script>
