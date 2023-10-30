@@ -1,8 +1,6 @@
 # Web Location
 
- * By using basic API Token we  find the geographical location on the google maps through given coordinates
-
-
+ * Utilizing a fundamental API Token allows us to pinpoint the geographic location on Google Maps using provided coordinates. This process empowers us to access specific location information through the API, enhancing our mapping capabilities and spatial awareness.*
 
 ## How to contribute 📝 ?
 
